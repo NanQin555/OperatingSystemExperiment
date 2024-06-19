@@ -91,7 +91,7 @@ int is_Consumers_end(struct BufferPool *shm) {
 int init_sem(int sem_id, int init_value)
 {
     union semun sem_union;
-    sem_union.val = init_value;
+    sem_union.val = init_value; 
     //BUFFER
     for(int i=0; i<2; i++) {
         if (semctl(sem_id, i, SETVAL, sem_union) == -1)

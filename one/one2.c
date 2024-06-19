@@ -58,11 +58,7 @@ int main () {
         sem_init(&ready[i], 0, 0);
     }
 
-    // for (int i=0; i<PHILOSOPHER_NUM; i++) {
-    //     pthread_t thread0;
-    //     pthread_create(&thread0, NULL, philosopher_adapter, (void*)i);
-    //     pthread_join(thread0, NULL);
-    // }
+
     pthread_t thread0, thread1, thread2, thread3, thread4;
     pthread_create(&thread0, NULL, philosopher_adapter, (void*)0);
     pthread_create(&thread1, NULL, philosopher_adapter, (void*)1);

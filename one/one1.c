@@ -20,7 +20,6 @@ void eat(int number) {
 }
 
 void philosopher(int number) {
-    //while(times[number] < 1000) {
     while(1) {
         printf("philosopher %d is thinking\n", number);
         for(int i=0 ;i<MAX; i++) {
@@ -46,10 +45,6 @@ int main () {
         pthread_cond_init(&cond[i], NULL);
     }
 
-    // for (int i=0; i<PHILOSOPHER_NUM; i++) {
-    //     pthread_t thread0;
-    //     pthread_create(&thread0, NULL, philosopher_adapter, (void*)i);
-    // }
     pthread_t thread0, thread1, thread2, thread3, thread4;
     pthread_create(&thread1, NULL, philosopher_adapter, (void*)1);
     pthread_create(&thread2, NULL, philosopher_adapter, (void*)2);

@@ -97,6 +97,8 @@ void cpfolder(char* source_path, char* target_path) {
 
     struct dirent* entry;
     while ((entry = readdir(source_dir)) != NULL) {
+        // entry->d_type == DT_REG;
+        // entry->d_type == DT_DIR;
         char _sourcepath[MAX_PATH];
         snprintf(_sourcepath, sizeof(_sourcepath), "%s/%s", source_path, entry->d_name);
         struct stat source_statbuf;

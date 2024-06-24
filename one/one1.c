@@ -28,6 +28,8 @@ void philosopher(int number) {
         pthread_mutex_lock(&mlock[number]);
         while (pthread_mutex_trylock(&mlock[(number + 1) % 5]) != 0) {
             pthread_cond_wait(&cond[number], &mlock[number]);
+            // pthread_cond_wait(&cond[number]);
+            // pthread_mutex_lock(&mlock[number]);
         }
         eat(number);
     }
